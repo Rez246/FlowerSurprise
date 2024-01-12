@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Button</title>
+    <style>
+        body {
+            background: url('path/to/background_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Added segment for light pink background */
+            background-color: rgba(255, 182, 193, 0.5); /* Light Pink color with transparency */
+        }
+
+        #surprise-button {
+            font-size: 4em;
+            padding: 20px;
+            background-color: #ff69b4; /* Pink color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #surprise-container {
+            display: none;
+            text-align: center;
+        }
+
+        #flower-bouquet {
+            width: 0;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        #tag {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #8B4513; /* Brown color */
+        }
+    </style>
+</head>
+<body>
+
+<button id="surprise-button" onclick="showSurprise()">Surprise</button>
+
+<div id="surprise-container">
+    <img id="flower-bouquet" src="flowerss.jpg" alt="Pink Flower Bouquet">
+    <p id="tag">The tag says for Sabrina :p</p>
+    <!-- Hello Kitty stickers can be added here -->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css"></script>
+<script>
+    function showSurprise() {
+        var surpriseButton = document.getElementById('surprise-button');
+        var surpriseContainer = document.getElementById('surprise-container');
+        var flowerBouquet = document.getElementById('flower-bouquet');
+
+        surpriseButton.style.display = 'none';
+        surpriseContainer.style.display = 'block';
+
+        setTimeout(function () {
+            flowerBouquet.style.width = '720px';
+            flowerBouquet.style.opacity = '1';
+        }, 100);
+    }
+</script>
+
+</body>
+</html>
